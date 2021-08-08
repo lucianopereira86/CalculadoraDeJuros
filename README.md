@@ -29,7 +29,7 @@
 `docker-compose up --build`  
 
 - Após o build ser finalizado, as APIs estarão acessíveis nos seguintes endereços:
-    http://localhost:5001/swagger/index.html (RetornaTaxaDeJuros)
+    http://localhost:5001/swagger/index.html (RetornaTaxaDeJuros)  
     http://localhost:5002/swagger/index.html (CalculadoraDeJuros)
 
 
@@ -39,9 +39,9 @@
 - Em "/src/CalculadoraDeJuros/CalculadoraDeJuros.Tests", executar o comando:
 `dotnet test`  
 
-![test1](/docs/test1.PNG)  
+![test1](/docs/test1.JPG)  
 
 - Em "/src/RetornaTaxaDeJuros/RetornaTaxaDeJuros.Tests", executar o comando
 `dotnet test`  
 
-![test2](/docs/test2.PNG)  
+![test2](/docs/test2.JPG)  
