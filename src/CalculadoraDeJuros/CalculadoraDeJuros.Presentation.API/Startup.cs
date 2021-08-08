@@ -29,6 +29,8 @@ namespace CalculadoraDeJuros.Presentation.API
 
             // Dependency Injection
             NativeInjectionBootstrapper.Injector(services);
+
+            // Connection Strings
             services.Configure<ConnectionStrings>(x => Configuration.Bind("ConnectionStrings", x));
         }
 

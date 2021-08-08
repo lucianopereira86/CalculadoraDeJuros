@@ -28,5 +28,15 @@ namespace CalculadoraDeJuros.Presentation.API.Controllers
             _logger.LogInformation($"GetCalculaJuros => ValorFinal = {result.ValorFinal}");
             return Ok(result);
         }
+
+        [HttpGet]
+        [Route("showmethecode")]
+        [ProducesResponseType(200)]
+        public async Task<IActionResult> ShowMeTheCode()
+        {
+            var result = await _calculaJurosBO.GetGitHub();
+            _logger.LogInformation($"GetGitHubResultVM => Url = {result.Url}");
+            return Ok(result);
+        }
     }
 }

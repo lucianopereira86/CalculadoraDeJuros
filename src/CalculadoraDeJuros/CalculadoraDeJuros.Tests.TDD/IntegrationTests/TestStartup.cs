@@ -23,6 +23,7 @@ namespace CalculadoraDeJuros.Tests.IntegrationTests
             services.AddControllers().AddApplicationPart(typeof(Startup).Assembly);
             // Dependency Injection
             NativeInjectionBootstrapper.Injector(services);
+            // Connection Strings
             services.Configure<ConnectionStrings>(x => Configuration.Bind("ConnectionStrings", x));
         }
 

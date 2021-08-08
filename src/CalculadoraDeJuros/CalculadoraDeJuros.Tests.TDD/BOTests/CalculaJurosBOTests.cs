@@ -21,12 +21,10 @@ namespace CalculadoraDeJuros.Tests.BOTests
         {
             _serviceProvider = factory.Services;
         }
-        [Theory]
-        [InlineData(100.0, 5, 0.01, 105.10)]
-        public async Task ShouldReturnSuccessWhenValorFinalEqualsExpected(double valorInicial, int meses, double juros, double expected)
-        {
-            #region Arrange
 
+        #region Private Methods
+        private CalculaJurosBO InitCalculaJurosBO()
+        {
             #region AutoMapper
             var domainToViewModelMappingProfile = new DomainToViewModelMappingProfile();
             var viewModelToDomainMappingProfile = new ViewModelToDomainMappingProfile();
@@ -40,8 +38,17 @@ namespace CalculadoraDeJuros.Tests.BOTests
             IOptions<ConnectionStrings> options = (IOptions<ConnectionStrings>)_serviceProvider.GetService(typeof(IOptions<ConnectionStrings>));
             #endregion Dependencies
 
-            var request = new GetCalculaJurosVM { ValorInicial = valorInicial, Meses = meses };
-            var calculaJurosBO = new CalculaJurosBO(mapper, validator, httpService, options);
+            return new CalculaJurosBO(mapper, validator, httpService, options);
+        }
+        #endregion Private Methods
+
+        [Theory]
+        [InlineData(100.0, 5, 105.10)]
+        public async Task ShouldReturnSuccessWhenCalculaJurosValorFinalEqualsExpected(double valorInicial, int meses, double expected)
+        {
+            #region Arrange
+            CalculaJurosBO calculaJurosBO = InitCalculaJurosBO();
+            GetCalculaJurosVM request = new() { ValorInicial = valorInicial, Meses = meses };
             #endregion Arrange
 
             #region Act
@@ -50,6 +57,22 @@ namespace CalculadoraDeJuros.Tests.BOTests
 
             #region Assert
             Assert.Equal(result.ValorFinal, expected);
+            #endregion Assert
+        }
+
+        [Fact]
+        public async Task ShouldReturnSuccessWhenGitHubUrlExists()
+        {
+            #region Arrange
+            CalculaJurosBO calculaJurosBO = InitCalculaJurosBO();
+            #endregion Arrange
+
+            #region Act
+            var result = await calculaJurosBO.GetGitHub();
+            #endregion Act
+
+            #region Assert
+            Assert.NotEmpty(result.Url);
             #endregion Assert
         }
     }

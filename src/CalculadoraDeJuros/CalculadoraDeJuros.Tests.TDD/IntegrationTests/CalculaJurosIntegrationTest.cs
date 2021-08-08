@@ -18,8 +18,19 @@ namespace CalculadoraDeJuros.Tests.IntegrationTests
             _client = factory.CreateClient();
         }
 
+        #region Private Methods
+        private string GetQueryString(object obj)
+        {
+            var properties = from p in obj.GetType().GetProperties()
+                             where p.GetValue(obj, null) != null
+                             select p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(obj, null).ToString().Replace(",", "."));
+
+            return String.Join("&", properties.ToArray());
+        }
+        #endregion Private Methods
+
         [Fact]
-        public async Task ShouldReturnSuccessWhenResultEqualsExpected()
+        public async Task ShouldReturnSuccessWhenCalculaJurosResultEqualsExpected()
         {
             #region Arrange
             var request = new GetCalculaJurosVM { ValorInicial = 100.0, Meses = 5 };
@@ -41,13 +52,25 @@ namespace CalculadoraDeJuros.Tests.IntegrationTests
             #endregion Assert
         }
 
-        private string GetQueryString(object obj)
-        {
-            var properties = from p in obj.GetType().GetProperties()
-                             where p.GetValue(obj, null) != null
-                             select p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(obj, null).ToString().Replace(",","."));
 
-            return String.Join("&", properties.ToArray());
+        [Fact]
+        public async Task ShouldReturnSuccessWhenGitHubCodeExists()
+        {
+            #region Arrange
+            string uri = "/api/showmethecode";
+            #endregion Arrange
+
+            #region Act
+            var httpResponse = await _client.GetAsync(uri);
+            #endregion Act
+
+            #region Assert
+            httpResponse.EnsureSuccessStatusCode();
+            Assert.True(httpResponse.IsSuccessStatusCode);
+
+            var result = JsonConvert.DeserializeObject<GetGitHubResultVM>(httpResponse.Content.ReadAsStringAsync().Result);
+            Assert.NotEmpty(result.Url);
+            #endregion Assert
         }
     }
 }

@@ -25,7 +25,6 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.BO
         }
         public async Task<GetCalculaJurosResultVM> GetCalculaJuros(GetCalculaJurosVM request)
         {
-            await Task.Delay(1);
             var validationResult = await _validator.ValidateAsync(request);
             if(!validationResult.IsValid)
             {
@@ -37,6 +36,13 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.BO
             var calculaJuros = _mapper.Map<CalculaJuros>(request);
             calculaJuros.SetTaxaJuros(juros.Taxa);
             var result = _mapper.Map<GetCalculaJurosResultVM>(calculaJuros);
+            return result;
+        }
+
+        public async Task<GetGitHubResultVM> GetGitHub()
+        {
+            await Task.Delay(1);
+            var result = new GetGitHubResultVM(_connectionStrings.GitHub);
             return result;
         }
     }
