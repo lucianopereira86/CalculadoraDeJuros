@@ -4,6 +4,6 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.Interfaces
 {
     public interface IHttpService
     {
-        Task<dynamic> Connect(string url, string method, dynamic obj = null);
+        Task<T> Connect<T>(string url, string method, dynamic obj = null);
     }
 }

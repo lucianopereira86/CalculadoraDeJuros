@@ -17,7 +17,7 @@ namespace CalculadoraDeJuros.Infra.Services
         {
             _logger = logger;
         }
-        public async Task<dynamic> Connect(string url, string method, dynamic obj = null)
+        public async Task<T> Connect<T>(string url, string method, dynamic obj = null)
         {
             _logger.LogInformation($"CONECTANDO COM API = {url}");
 
@@ -35,10 +35,10 @@ namespace CalculadoraDeJuros.Infra.Services
                 dataStream.Write(byteArray, 0, byteArray.Length);
                 dataStream.Close();
             }
-            return await GetResult(request);
+            return await GetResult<T>(request);
         }
 
-        private async Task<dynamic> GetResult(HttpWebRequest request)
+        private async Task<T> GetResult<T>(HttpWebRequest request)
         {
             HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
             var isOk = response.StatusCode == HttpStatusCode.OK;
@@ -48,7 +48,7 @@ namespace CalculadoraDeJuros.Infra.Services
                 _logger.LogInformation("CONEXAO COM API REALIZADA COM SUCESSO");
                 string retorno = reader.ReadToEnd();
                 _logger.LogInformation($"RETORNO DA API\n{retorno}");
-                return JsonConvert.DeserializeObject<dynamic>(retorno);
+                return JsonConvert.DeserializeObject<T>(retorno);
             }
         }
     }

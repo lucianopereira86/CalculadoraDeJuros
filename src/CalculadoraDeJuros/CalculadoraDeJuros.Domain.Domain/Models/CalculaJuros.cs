@@ -10,14 +10,14 @@ namespace CalculadoraDeJuros.Domain.Domain.Models
             Meses = meses;
         }
 
-        public void SetJuros(double juros)
+        public void SetTaxaJuros(double taxaJuros)
         {
-            Juros = juros;
+            TaxaJuros = taxaJuros;
         }
 
         public double ValorInicial { get; private set; }
-        public double Juros { get; private set; }
+        public double TaxaJuros { get; private set; }
         public int Meses { get; private set; }
-        public double ValorFinal => Math.Truncate((ValorInicial * Math.Pow(1 + Juros, Meses)) * 100) / 100;
+        public double ValorFinal => Math.Truncate((ValorInicial * Math.Pow(1 + TaxaJuros, Meses)) * 100) / 100;
     }
 }

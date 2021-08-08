@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CalculadoraDeJuros.Domain.Domain.Models
+﻿namespace CalculadoraDeJuros.Domain.Domain.Models
 {
     public class ConnectionStrings
     {

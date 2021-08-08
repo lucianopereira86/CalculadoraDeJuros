@@ -4,8 +4,6 @@ using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
 using CalculadoraDeJuros.Domain.Domain.Models;
 using FluentValidation;
 using Microsoft.Extensions.Options;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CalculadoraDeJuros.Application.BusinessOperations.BO
@@ -34,11 +32,10 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.BO
                 GetErrors(validationResult);
             }
 
-            var httpResult = await _httpService.Connect(_connectionStrings.ApiTaxaJuros, "GET");
-            var juros = Convert.ChangeType(httpResult, typeof(Juros));
+            var juros = await _httpService.Connect<Juros>(_connectionStrings.ApiTaxaJuros, "GET");
 
             var calculaJuros = _mapper.Map<CalculaJuros>(request);
-            calculaJuros.SetJuros(juros);
+            calculaJuros.SetTaxaJuros(juros.Taxa);
             var result = _mapper.Map<GetCalculaJurosResultVM>(calculaJuros);
             return result;
         }

@@ -11,7 +11,7 @@ namespace CalculadoraDeJuros.Tests.BOTests
         {
             #region Act
             var result = new CalculaJuros(valorInicial,meses);
-            result.SetJuros(juros);
+            result.SetTaxaJuros(juros);
             #endregion Act
 
             #region Assert
