@@ -1,9 +1,10 @@
-﻿using RetornaTaxaDeJuros.Domain.Domain.Interfaces;
+﻿using RetornaTaxaDeJuros.Application.BusinessOperations.Interfaces;
+using RetornaTaxaDeJuros.Domain.Domain.Interfaces;
 using System.Threading.Tasks;
 
 namespace RetornaTaxaDeJuros.Application.BusinessOperations.BO
 {
-    public class TaxaJurosBO
+    public class TaxaJurosBO: ITaxaJurosBO
     {
         private readonly ITaxaJurosRepository _taxaJurosRepository;
 

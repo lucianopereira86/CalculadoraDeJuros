@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RetornaTaxaDeJuros.Application.BusinessOperations\RetornaTaxaDeJuros.Application.BusinessOperations.csproj" />
     <ProjectReference Include="..\RetornaTaxaDeJuros.Infra.CrossCutting\RetornaTaxaDeJuros.Infra.CrossCutting.csproj" />
   </ItemGroup>
 

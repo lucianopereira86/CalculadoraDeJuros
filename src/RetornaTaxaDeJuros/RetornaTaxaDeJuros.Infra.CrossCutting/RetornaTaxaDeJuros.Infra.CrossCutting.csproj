@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RetornaTaxaDeJuros.Application.BusinessOperations\RetornaTaxaDeJuros.Application.BusinessOperations.csproj" />
     <ProjectReference Include="..\RetornaTaxaDeJuros.Domain.Domain\RetornaTaxaDeJuros.Domain.Domain.csproj" />
     <ProjectReference Include="..\RetornaTaxaDeJuros.Infra.Repository\RetornaTaxaDeJuros.Infra.Repository.csproj" />
   </ItemGroup>
