@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculadoraDeJuros.Infra.Repository.Repositories;
+using System;
 using Xunit;
 
 namespace CalculadoraDeJuros.Tests.RepositoryTests
@@ -11,10 +12,11 @@ namespace CalculadoraDeJuros.Tests.RepositoryTests
         {
             #region Arrange
             double juros = 0.01;
+            CalculaJurosRepository repo = new CalculaJurosRepository();
             #endregion Arrange
 
             #region Act
-            double valorFinal = Math.Truncate((valorInicial * Math.Pow(1 + juros, meses)) * 100) / 100;
+            double valorFinal = repo.RetornaValorFinal(valorInicial, juros, meses);
             #endregion Act
 
             #region Assert
