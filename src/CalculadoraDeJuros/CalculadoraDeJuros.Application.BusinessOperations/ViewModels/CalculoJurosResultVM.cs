@@ -1,4 +1,4 @@
-﻿namespace CalculadoraDeJuros.Domain.Domain.Entities
+﻿namespace CalculadoraDeJuros.Application.BusinessOperations.ViewModels
 {
     public class CalculoJurosResult
     {

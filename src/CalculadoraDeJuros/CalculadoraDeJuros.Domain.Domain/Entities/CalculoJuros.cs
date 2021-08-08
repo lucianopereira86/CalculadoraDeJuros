@@ -1,8 +1,10 @@
-﻿namespace CalculadoraDeJuros.Domain.Domain.Entities
+﻿using System;
+
+namespace CalculadoraDeJuros.Domain.Domain.Entities
 {
-    public class CalculoJurosRequest
+    public class CalculoJuros
     {
-        public CalculoJurosRequest(double valorInicial, double juros, int meses)
+        public CalculoJuros(double valorInicial, double juros, int meses)
         {
             ValorInicial = valorInicial;
             Juros = juros;
@@ -12,5 +14,6 @@
         public double ValorInicial { get; private set; }
         public double Juros { get; private set; }
         public int Meses { get; private set; }
+        public double ValorFinal => Math.Truncate((ValorInicial * Math.Pow(1 + Juros, Meses)) * 100) / 100;
     }
 }

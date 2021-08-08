@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CalculadoraDeJuros.Application.BusinessOperations\CalculadoraDeJuros.Application.BusinessOperations.csproj" />
-    <ProjectReference Include="..\CalculadoraDeJuros.Infra.Repository\CalculadoraDeJuros.Infra.Repository.csproj" />
     <ProjectReference Include="..\CalculadoraDeJuros.Presentation.API\CalculadoraDeJuros.Presentation.API.csproj" />
   </ItemGroup>
 
