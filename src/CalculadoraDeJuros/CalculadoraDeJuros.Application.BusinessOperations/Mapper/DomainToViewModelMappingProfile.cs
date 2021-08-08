@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
-using CalculadoraDeJuros.Domain.Domain.Entities;
+using CalculadoraDeJuros.Domain.Domain.Models;
 
 namespace CalculadoraDeJuros.Application.BusinessOperations.Mapper
 {

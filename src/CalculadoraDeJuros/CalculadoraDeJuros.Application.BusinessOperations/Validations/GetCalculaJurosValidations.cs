@@ -13,11 +13,6 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.Validations
                 .WithErrorCode(((int)ErrorCode.VALORINICIAL_EMPTY).ToString())
                 .WithMessage(ErrorCode.VALORINICIAL_EMPTY.ToString());
 
-            RuleFor(r => r.Juros)
-                .GreaterThan(0)
-                .WithErrorCode(((int)ErrorCode.JUROS_EMPTY).ToString())
-                .WithMessage(ErrorCode.JUROS_EMPTY.ToString());
-
             RuleFor(r => r.Meses)
                 .GreaterThan(0)
                 .WithErrorCode(((int)ErrorCode.MESES_EMPTY).ToString())

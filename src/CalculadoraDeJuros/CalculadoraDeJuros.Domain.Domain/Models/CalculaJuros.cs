@@ -1,14 +1,18 @@
 ﻿using System;
 
-namespace CalculadoraDeJuros.Domain.Domain.Entities
+namespace CalculadoraDeJuros.Domain.Domain.Models
 {
     public class CalculaJuros
     {
-        public CalculaJuros(double valorInicial, double juros, int meses)
+        public CalculaJuros(double valorInicial, int meses)
         {
             ValorInicial = valorInicial;
-            Juros = juros;
             Meses = meses;
+        }
+
+        public void SetJuros(double juros)
+        {
+            Juros = juros;
         }
 
         public double ValorInicial { get; private set; }

@@ -2,6 +2,7 @@
 using CalculadoraDeJuros.Application.BusinessOperations.Interfaces;
 using CalculadoraDeJuros.Application.BusinessOperations.Validations;
 using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
+using CalculadoraDeJuros.Infra.Services;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -13,6 +14,7 @@ namespace CalculadoraDeJuros.Infra.CrossCutting
         public static IServiceCollection Injector(this IServiceCollection services)
         {
             #region Interfaces
+            services.AddScoped<IHttpService, HttpService>();
             services.AddScoped<ICalculaJurosBO, CalculaJurosBO>();
             services.AddScoped<IValidator<GetCalculaJurosVM>, GetCalculaJurosValidations>();
             #endregion Interfaces

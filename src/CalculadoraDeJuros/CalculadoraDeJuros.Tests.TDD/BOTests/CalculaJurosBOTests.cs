@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using CalculadoraDeJuros.Application.BusinessOperations.BO;
+using CalculadoraDeJuros.Application.BusinessOperations.Interfaces;
 using CalculadoraDeJuros.Application.BusinessOperations.Mapper;
 using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
-using CalculadoraDeJuros.Domain.Domain.Entities;
+using CalculadoraDeJuros.Domain.Domain.Models;
 using CalculadoraDeJuros.Tests.IntegrationTests;
 using FluentValidation;
+using Microsoft.Extensions.Options;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -32,12 +34,14 @@ namespace CalculadoraDeJuros.Tests.BOTests
             IMapper mapper = new Mapper(configuration);
             #endregion AutoMapper
 
-            #region Validator
+            #region Dependencies
             IValidator<GetCalculaJurosVM> validator = (IValidator<GetCalculaJurosVM>)_serviceProvider.GetService(typeof(IValidator<GetCalculaJurosVM>));
-            #endregion Validator
+            IHttpService httpService = (IHttpService)_serviceProvider.GetService(typeof(IHttpService));
+            IOptions<ConnectionStrings> options = (IOptions<ConnectionStrings>)_serviceProvider.GetService(typeof(IOptions<ConnectionStrings>));
+            #endregion Dependencies
 
-            var request = new GetCalculaJurosVM { ValorInicial = valorInicial, Juros = juros, Meses = meses };
-            var calculaJurosBO = new CalculaJurosBO(mapper, validator);
+            var request = new GetCalculaJurosVM { ValorInicial = valorInicial, Meses = meses };
+            var calculaJurosBO = new CalculaJurosBO(mapper, validator, httpService, options);
             #endregion Arrange
 
             #region Act

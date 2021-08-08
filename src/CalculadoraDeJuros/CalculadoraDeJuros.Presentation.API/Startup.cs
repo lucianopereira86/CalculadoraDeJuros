@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using CalculadoraDeJuros.Infra.CrossCutting;
+using CalculadoraDeJuros.Domain.Domain.Models;
 
 namespace CalculadoraDeJuros.Presentation.API
 {
@@ -28,6 +29,7 @@ namespace CalculadoraDeJuros.Presentation.API
 
             // Dependency Injection
             NativeInjectionBootstrapper.Injector(services);
+            services.Configure<ConnectionStrings>(x => Configuration.Bind("ConnectionStrings", x));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

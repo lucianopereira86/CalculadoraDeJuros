@@ -1,4 +1,4 @@
-﻿using CalculadoraDeJuros.Domain.Domain.Entities;
+﻿using CalculadoraDeJuros.Domain.Domain.Models;
 using Xunit;
 
 namespace CalculadoraDeJuros.Tests.BOTests
@@ -10,7 +10,8 @@ namespace CalculadoraDeJuros.Tests.BOTests
         public void ShouldReturnSuccessWhenValorFinalEqualsExpected(double valorInicial, int meses, double juros, double expected)
         {
             #region Act
-            var result = new CalculaJuros(valorInicial, juros, meses);
+            var result = new CalculaJuros(valorInicial,meses);
+            result.SetJuros(juros);
             #endregion Act
 
             #region Assert

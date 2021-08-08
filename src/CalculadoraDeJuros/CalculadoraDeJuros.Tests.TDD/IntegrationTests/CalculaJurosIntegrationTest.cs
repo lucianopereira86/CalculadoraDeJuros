@@ -22,7 +22,7 @@ namespace CalculadoraDeJuros.Tests.IntegrationTests
         public async Task ShouldReturnSuccessWhenResultEqualsExpected()
         {
             #region Arrange
-            var request = new GetCalculaJurosVM { ValorInicial = 100.0, Juros = 0.01, Meses = 5 };
+            var request = new GetCalculaJurosVM { ValorInicial = 100.0, Meses = 5 };
             var expectedResult = new GetCalculaJurosResultVM { ValorFinal = 105.10 };
 
             string uri = $"/api/calculaJuros?{GetQueryString(request)}";

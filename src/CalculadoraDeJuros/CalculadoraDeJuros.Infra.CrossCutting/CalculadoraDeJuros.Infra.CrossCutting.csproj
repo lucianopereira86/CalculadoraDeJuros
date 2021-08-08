@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CalculadoraDeJuros.Application.BusinessOperations\CalculadoraDeJuros.Application.BusinessOperations.csproj" />
     <ProjectReference Include="..\CalculadoraDeJuros.Domain.Domain\CalculadoraDeJuros.Domain.Domain.csproj" />
+    <ProjectReference Include="..\CalculadoraDeJuros.Infra.Services\CalculadoraDeJuros.Infra.Services.csproj" />
   </ItemGroup>
 
 </Project>
