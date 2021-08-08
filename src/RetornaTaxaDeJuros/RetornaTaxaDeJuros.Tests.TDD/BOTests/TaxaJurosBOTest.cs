@@ -7,7 +7,7 @@ using RetornaTaxaDeJuros.Infra.Repository.Repositories;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RetornaTaxaDeJuros.Tests.TDD.BOTests
+namespace RetornaTaxaDeJuros.Tests.BOTests
 {
     public class TaxaJurosBOTest
     {

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CalculadoraDeJuros.Application.BusinessOperations\CalculadoraDeJuros.Application.BusinessOperations.csproj" />
+    <ProjectReference Include="..\CalculadoraDeJuros.Domain.Domain\CalculadoraDeJuros.Domain.Domain.csproj" />
+    <ProjectReference Include="..\CalculadoraDeJuros.Infra.Repository\CalculadoraDeJuros.Infra.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -2,7 +2,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RetornaTaxaDeJuros.Tests.TDD.IntegrationTests
+namespace RetornaTaxaDeJuros.Tests.IntegrationTests
 {
     public class TaxaJurosIntegrationTest : IClassFixture<MyWebFactory>
     {

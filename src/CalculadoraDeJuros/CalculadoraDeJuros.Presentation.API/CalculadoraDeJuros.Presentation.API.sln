@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetornaTaxaDeJuros.Presentation.API", "RetornaTaxaDeJuros.Presentation.API.csproj", "{540EE32B-761F-4B82-B81B-B478D84CEAAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Presentation.API", "CalculadoraDeJuros.Presentation.API.csproj", "{540EE32B-761F-4B82-B81B-B478D84CEAAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetornaTaxaDeJuros.Infra.Repository", "..\RetornaTaxaDeJuros.Infra.Repository\RetornaTaxaDeJuros.Infra.Repository.csproj", "{E27D0E3A-3FFD-43E1-AE86-8EE96C1470FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Infra.Repository", "..\CalculadoraDeJuros.Infra.Repository\CalculadoraDeJuros.Infra.Repository.csproj", "{E27D0E3A-3FFD-43E1-AE86-8EE96C1470FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{53F72D7E-4687-4C71-B805-94943F196F15}"
 EndProject
@@ -15,15 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{79699469-A85A-4DEA-BFA1-93F162951AC3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetornaTaxaDeJuros.Domain.Domain", "..\RetornaTaxaDeJuros.Domain.Domain\RetornaTaxaDeJuros.Domain.Domain.csproj", "{4EF85AE4-4DF6-4D45-B441-D1CA4BAA1EB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Domain.Domain", "..\CalculadoraDeJuros.Domain.Domain\CalculadoraDeJuros.Domain.Domain.csproj", "{4EF85AE4-4DF6-4D45-B441-D1CA4BAA1EB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetornaTaxaDeJuros.Application.BusinessOperations", "..\RetornaTaxaDeJuros.Application.BusinessOperations\RetornaTaxaDeJuros.Application.BusinessOperations.csproj", "{75DA31B8-3E6C-4C8B-9AED-238A63962FAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Application.BusinessOperations", "..\CalculadoraDeJuros.Application.BusinessOperations\CalculadoraDeJuros.Application.BusinessOperations.csproj", "{75DA31B8-3E6C-4C8B-9AED-238A63962FAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{E0CFDAFB-D860-4318-BD00-EBDE8B1C0399}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetornaTaxaDeJuros.Tests", "..\RetornaTaxaDeJuros.Tests.TDD\RetornaTaxaDeJuros.Tests.csproj", "{A3A949FA-E4B6-4582-A5DE-27C4AC6E6697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Tests", "..\CalculadoraDeJuros.Tests.TDD\CalculadoraDeJuros.Tests.csproj", "{A3A949FA-E4B6-4582-A5DE-27C4AC6E6697}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RetornaTaxaDeJuros.Infra.CrossCutting", "..\RetornaTaxaDeJuros.Infra.CrossCutting\RetornaTaxaDeJuros.Infra.CrossCutting.csproj", "{955B7F3D-C16B-49E7-A668-0E694369727E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Infra.CrossCutting", "..\CalculadoraDeJuros.Infra.CrossCutting\CalculadoraDeJuros.Infra.CrossCutting.csproj", "{955B7F3D-C16B-49E7-A668-0E694369727E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RetornaTaxaDeJuros.Infra.CrossCutting;
-using RetornaTaxaDeJuros.Presentation.API;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using CalculadoraDeJuros.Infra.CrossCutting;
 
-namespace RetornaTaxaDeJuros.Tests.IntegrationTests
+namespace CalculadoraDeJuros.Presentation.API
 {
-    public class TestStartup
+    public class Startup
     {
-        public TestStartup(IConfiguration configuration)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -19,7 +20,12 @@ namespace RetornaTaxaDeJuros.Tests.IntegrationTests
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddApplicationPart(typeof(Startup).Assembly);
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CalculadoraDeJuros.Presentation.API", Version = "v1" });
+            });
+
             // Dependency Injection
             NativeInjectionBootstrapper.Injector(services);
         }
@@ -27,6 +33,15 @@ namespace RetornaTaxaDeJuros.Tests.IntegrationTests
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalculadoraDeJuros.Presentation.API v1"));
+            }
+
+            app.UseHttpsRedirection();
+
             app.UseRouting();
 
             app.UseAuthorization();
