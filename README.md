@@ -40,8 +40,10 @@
 `dotnet test`  
 
 ![test1](/docs/test1.JPG)  
+_Resultado visível pelo Visual Studio 2019_
 
 - Em "/src/RetornaTaxaDeJuros/RetornaTaxaDeJuros.Tests", executar o comando
 `dotnet test`  
 
 ![test2](/docs/test2.JPG)  
+_Resultado visível pelo Visual Studio 2019_
