@@ -1,7 +1,9 @@
-﻿namespace RetornaTaxaDeJuros.Domain.Domain.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace RetornaTaxaDeJuros.Domain.Domain.Interfaces
 {
     public interface ITaxaJurosRepository
     {
-        double GetTaxaJuros();
+        Task<double> GetTaxaJuros();
     }
 }
