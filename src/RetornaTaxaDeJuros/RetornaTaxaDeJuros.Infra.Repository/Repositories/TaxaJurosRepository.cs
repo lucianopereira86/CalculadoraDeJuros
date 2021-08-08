@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RetornaTaxaDeJuros.Domain.Domain.Interfaces;
 
 namespace RetornaTaxaDeJuros.Infra.Repository.Repositories
 {
-    public class TaxaJurosRepository
+    public class TaxaJurosRepository: ITaxaJurosRepository
     {
         public double GetTaxaJuros()
         {
