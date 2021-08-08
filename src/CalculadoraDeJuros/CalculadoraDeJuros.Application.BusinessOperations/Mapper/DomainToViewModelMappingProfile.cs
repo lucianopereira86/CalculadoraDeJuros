@@ -8,7 +8,7 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.Mapper
     {
         public DomainToViewModelMappingProfile()
         {
-            CreateMap<CalculoJuros, CalculoJurosResultVM>();
+            CreateMap<CalculaJuros, GetCalculaJurosResultVM>();
         }
     }
 }

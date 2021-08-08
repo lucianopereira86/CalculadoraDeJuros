@@ -5,6 +5,6 @@ namespace CalculadoraDeJuros.Application.BusinessOperations.Interfaces
 {
     public interface ICalculaJurosBO
     {
-        Task<CalculoJurosResultVM> GetValorFinal(CalculoJurosRequestVM request);
+        Task<GetCalculaJurosResultVM> GetCalculaJuros(GetCalculaJurosVM request);
     }
 }

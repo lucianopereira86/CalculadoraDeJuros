@@ -22,11 +22,11 @@ namespace CalculadoraDeJuros.Presentation.API.Controllers
         [HttpGet]
         [Route("calculajuros")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> GetCalculaJuros([FromQuery] CalculoJurosRequestVM request)
+        public async Task<IActionResult> GetCalculaJuros([FromQuery] GetCalculaJurosVM request)
         {
-            var result = await _calculaJurosBO.GetValorFinal(request);
+            var result = await _calculaJurosBO.GetCalculaJuros(request);
             _logger.LogInformation($"GetCalculaJuros => ValorFinal = {result.ValorFinal}");
-            return Ok();
+            return Ok(result);
         }
     }
 }

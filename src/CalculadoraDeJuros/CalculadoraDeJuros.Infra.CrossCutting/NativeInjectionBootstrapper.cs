@@ -1,5 +1,8 @@
 ﻿using CalculadoraDeJuros.Application.BusinessOperations.BO;
 using CalculadoraDeJuros.Application.BusinessOperations.Interfaces;
+using CalculadoraDeJuros.Application.BusinessOperations.Validations;
+using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -11,12 +14,14 @@ namespace CalculadoraDeJuros.Infra.CrossCutting
         {
             #region Interfaces
             services.AddScoped<ICalculaJurosBO, CalculaJurosBO>();
+            services.AddScoped<IValidator<GetCalculaJurosVM>, GetCalculaJurosValidations>();
             #endregion Interfaces
 
             #region AutoMapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(typeof(Application.BusinessOperations.Mapper.DomainToViewModelMappingProfile));
             #endregion AutoMapper
+
 
             return services;
         }

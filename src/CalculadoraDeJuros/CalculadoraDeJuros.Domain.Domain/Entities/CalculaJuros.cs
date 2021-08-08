@@ -2,9 +2,9 @@
 
 namespace CalculadoraDeJuros.Domain.Domain.Entities
 {
-    public class CalculoJuros
+    public class CalculaJuros
     {
-        public CalculoJuros(double valorInicial, double juros, int meses)
+        public CalculaJuros(double valorInicial, double juros, int meses)
         {
             ValorInicial = valorInicial;
             Juros = juros;

@@ -10,7 +10,7 @@ namespace CalculadoraDeJuros.Tests.BOTests
         public void ShouldReturnSuccessWhenValorFinalEqualsExpected(double valorInicial, int meses, double juros, double expected)
         {
             #region Act
-            var result = new CalculoJuros(valorInicial, juros, meses);
+            var result = new CalculaJuros(valorInicial, juros, meses);
             #endregion Act
 
             #region Assert
