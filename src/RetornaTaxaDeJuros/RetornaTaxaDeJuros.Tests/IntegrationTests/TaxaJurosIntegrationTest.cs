@@ -14,7 +14,7 @@ namespace RetornaTaxaDeJuros.Tests.IntegrationTests
         }
 
         [Fact]
-        public async Task GetTaxaJuros()
+        public async Task ShouldReturnSuccessWhenTaxaJurosReturns()
         {
             var httpResponse = await _client.GetAsync("/api/taxaJuros");
 
