@@ -28,11 +28,13 @@
 - Em "/src", executar o comando:
 `docker-compose up --build`  
 
-- Após o build ser finalizado, as APIs estarão acessíveis nos seguintes endereços:
-    RetornaTaxaDeJuros: http://localhost:5001/swagger/index.html
+- Após o build ser finalizado, as APIs estarão acessíveis nos seguintes endereços:  
+    RetornaTaxaDeJuros: http://localhost:5001/swagger/index.html  
+
     ![swagger2](/docs/swagger2.JPG)  
     
-    CalculadoraDeJuros: http://localhost:5002/swagger/index.html
+    CalculadoraDeJuros: http://localhost:5002/swagger/index.html  
+    
     ![swagger1](/docs/swagger1.JPG)  
 
 ## Executar os testes
