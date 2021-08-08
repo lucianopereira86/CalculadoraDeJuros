@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RetornaTaxaDeJuros.Application.BusinessOperations.Interfaces;
+using RetornaTaxaDeJuros.Application.BusinessOperations.Models;
 using System.Threading.Tasks;
 
 namespace RetornaTaxaDeJuros.Presentation.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api")]
     public class TaxaJurosController : ControllerBase
     {
         private readonly ILogger<TaxaJurosController> _logger;
@@ -23,9 +24,9 @@ namespace RetornaTaxaDeJuros.Presentation.API.Controllers
         [ProducesResponseType(200)]
         public async Task<IActionResult> Get()
         {
-            double result = await _taxaJurosBO.GetTaxaJuros();
-            _logger.LogInformation($"GetTaxaJuros => {result}");
-            return Ok(result);
+            JurosVM juros = await _taxaJurosBO.GetTaxaJuros();
+            _logger.LogInformation($"GetTaxaJuros => Juros.Taxa = {juros.Taxa}");
+            return Ok(juros);
         }
     }
 }

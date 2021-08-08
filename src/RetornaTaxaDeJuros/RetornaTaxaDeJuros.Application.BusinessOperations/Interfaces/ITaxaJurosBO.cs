@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using RetornaTaxaDeJuros.Application.BusinessOperations.Models;
+using System.Threading.Tasks;
 
 namespace RetornaTaxaDeJuros.Application.BusinessOperations.Interfaces
 {
     public interface ITaxaJurosBO
     {
-        Task<double> GetTaxaJuros();
+        Task<JurosVM> GetTaxaJuros();
     }
 }

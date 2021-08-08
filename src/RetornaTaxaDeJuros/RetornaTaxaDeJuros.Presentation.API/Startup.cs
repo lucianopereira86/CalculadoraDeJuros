@@ -33,8 +33,9 @@ namespace RetornaTaxaDeJuros.Presentation.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RetornaTaxaDeJuros.Presentation.API", Version = "v1" });
             });
+
             // Dependency Injection
-            new NativeInjectionBootstrapper(services);
+            NativeInjectionBootstrapper.Injector(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
