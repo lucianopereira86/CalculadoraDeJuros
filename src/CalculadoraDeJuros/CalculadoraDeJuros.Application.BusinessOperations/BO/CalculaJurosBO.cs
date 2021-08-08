@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using CalculadoraDeJuros.Application.BusinessOperations.Interfaces;
 using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
 using CalculadoraDeJuros.Domain.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace CalculadoraDeJuros.Application.BusinessOperations.BO
 {
-    public class CalculaJurosBO
+    public class CalculaJurosBO: ICalculaJurosBO
     {
         private readonly IMapper _mapper;
         public CalculaJurosBO(IMapper mapper)

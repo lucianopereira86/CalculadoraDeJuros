@@ -12,8 +12,4 @@
     <ProjectReference Include="..\CalculadoraDeJuros.Domain.Domain\CalculadoraDeJuros.Domain.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>

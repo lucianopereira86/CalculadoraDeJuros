@@ -23,7 +23,7 @@ namespace CalculadoraDeJuros.Tests.BOTests
             IMapper mapper = new Mapper(configuration);
             #endregion AutoMapper
 
-            var request = new CalculoJurosRequestVM(valorInicial, juros, meses);
+            var request = new CalculoJurosRequestVM { ValorInicial = valorInicial, Juros = juros, Meses = meses };
             var calculaJurosBO = new CalculaJurosBO(mapper);
             #endregion Arrange
             

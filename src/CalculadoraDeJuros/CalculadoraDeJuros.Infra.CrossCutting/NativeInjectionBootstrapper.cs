@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CalculadoraDeJuros.Application.BusinessOperations.BO;
+using CalculadoraDeJuros.Application.BusinessOperations.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace CalculadoraDeJuros.Infra.CrossCutting
@@ -8,6 +10,7 @@ namespace CalculadoraDeJuros.Infra.CrossCutting
         public static IServiceCollection Injector(this IServiceCollection services)
         {
             #region Interfaces
+            services.AddScoped<ICalculaJurosBO, CalculaJurosBO>();
             #endregion Interfaces
 
             #region AutoMapper

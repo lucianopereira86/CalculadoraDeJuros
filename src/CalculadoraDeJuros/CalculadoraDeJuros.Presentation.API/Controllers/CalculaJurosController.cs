@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CalculadoraDeJuros.Application.BusinessOperations.Interfaces;
+using CalculadoraDeJuros.Application.BusinessOperations.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
@@ -9,17 +11,21 @@ namespace CalculadoraDeJuros.Presentation.API.Controllers
     public class CalculaJurosController : ControllerBase
     {
         private readonly ILogger<CalculaJurosController> _logger;
+        private readonly ICalculaJurosBO _calculaJurosBO;
 
-        public CalculaJurosController(ILogger<CalculaJurosController> logger)
+        public CalculaJurosController(ILogger<CalculaJurosController> logger, ICalculaJurosBO calculaJurosBO)
         {
             _logger = logger;
+            _calculaJurosBO = calculaJurosBO;
         }
 
         [HttpGet]
         [Route("calculajuros")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetCalculaJuros([FromQuery] CalculoJurosRequestVM request)
         {
+            var result = await _calculaJurosBO.GetValorFinal(request);
+            _logger.LogInformation($"GetCalculaJuros => ValorFinal = {result.ValorFinal}");
             return Ok();
         }
     }
