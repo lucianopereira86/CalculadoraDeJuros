@@ -12,7 +12,7 @@ namespace CalculadoraDeJuros.Infra.CrossCutting
 
             #region AutoMapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddAutoMapper(typeof(Application.BusinessOperations.Mapper.DomainToViewModeMappingProfile));
+            services.AddAutoMapper(typeof(Application.BusinessOperations.Mapper.DomainToViewModelMappingProfile));
             #endregion AutoMapper
 
             return services;

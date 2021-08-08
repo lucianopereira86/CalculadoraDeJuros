@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BO\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>
 

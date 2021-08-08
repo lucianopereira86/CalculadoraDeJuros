@@ -1,8 +1,8 @@
 ﻿namespace CalculadoraDeJuros.Application.BusinessOperations.ViewModels
 {
-    public class CalculoJurosResult
+    public class CalculoJurosResultVM
     {
-        public CalculoJurosResult(double valorFinal)
+        public CalculoJurosResultVM(double valorFinal)
         {
             ValorFinal = valorFinal;
         }
