@@ -29,9 +29,11 @@
 `docker-compose up --build`  
 
 - Após o build ser finalizado, as APIs estarão acessíveis nos seguintes endereços:
-    http://localhost:5001/swagger/index.html (RetornaTaxaDeJuros)  
-    http://localhost:5002/swagger/index.html (CalculadoraDeJuros)
-
+    RetornaTaxaDeJuros: http://localhost:5001/swagger/index.html
+    ![swagger2](/docs/swagger2.JPG)  
+    
+    CalculadoraDeJuros: http://localhost:5002/swagger/index.html
+    ![swagger1](/docs/swagger1.JPG)  
 
 ## Executar os testes
 - Os testes são divididos por camadas: BO (BusinessOperations), Domain e Integration.
