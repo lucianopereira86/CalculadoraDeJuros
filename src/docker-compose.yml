@@ -1,0 +1,19 @@
+version: "3"
+services:
+  apicalculajuros:
+    build:
+      context: ./CalculadoraDeJuros
+    container_name: calculadoradejuros
+    ports:
+      - "5002:80"
+    links:
+      - "retornataxadejuros"
+    depends_on: 
+      - retornataxadejuros
+  retornataxadejuros:
+    build:
+      context: ./RetornaTaxaDeJuros
+    container_name: retornataxadejuros
+    restart: "always"
+    ports:
+      - "5001:80"

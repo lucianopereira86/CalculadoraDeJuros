@@ -26,7 +26,6 @@ namespace CalculadoraDeJuros.Infra.Services
             request.ContentType = "application/json";
             request.Method = method;
             request.Timeout = 30000;
-            request.PreAuthenticate = true;
 
             if (request.Method.Equals("POST") || request.Method.Equals("PUT"))
             {
@@ -40,15 +39,23 @@ namespace CalculadoraDeJuros.Infra.Services
 
         private async Task<T> GetResult<T>(HttpWebRequest request)
         {
-            HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
-            var isOk = response.StatusCode == HttpStatusCode.OK;
-            var encoding = Encoding.UTF8;
-            using (var reader = new StreamReader(response.GetResponseStream(), encoding))
+            try
             {
-                _logger.LogInformation("CONEXAO COM API REALIZADA COM SUCESSO");
-                string retorno = reader.ReadToEnd();
-                _logger.LogInformation($"RETORNO DA API\n{retorno}");
-                return JsonConvert.DeserializeObject<T>(retorno);
+                HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
+                var isOk = response.StatusCode == HttpStatusCode.OK;
+                var encoding = Encoding.UTF8;
+                using (var reader = new StreamReader(response.GetResponseStream(), encoding))
+                {
+                    _logger.LogInformation("CONEXAO COM API REALIZADA COM SUCESSO");
+                    string retorno = reader.ReadToEnd();
+                    _logger.LogInformation($"RETORNO DA API\n{retorno}");
+                    return JsonConvert.DeserializeObject<T>(retorno);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

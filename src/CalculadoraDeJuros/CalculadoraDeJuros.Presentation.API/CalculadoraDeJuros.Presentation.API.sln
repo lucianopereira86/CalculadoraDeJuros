@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{E0CFDAFB-D860-4318-BD00-EBDE8B1C0399}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Tests", "..\CalculadoraDeJuros.Tests.TDD\CalculadoraDeJuros.Tests.csproj", "{A3A949FA-E4B6-4582-A5DE-27C4AC6E6697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Tests", "..\CalculadoraDeJuros.Tests\CalculadoraDeJuros.Tests.csproj", "{A3A949FA-E4B6-4582-A5DE-27C4AC6E6697}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraDeJuros.Infra.CrossCutting", "..\CalculadoraDeJuros.Infra.CrossCutting\CalculadoraDeJuros.Infra.CrossCutting.csproj", "{955B7F3D-C16B-49E7-A668-0E694369727E}"
 EndProject
