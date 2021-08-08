@@ -20,7 +20,8 @@ namespace RetornaTaxaDeJuros.Application.BusinessOperations.BO
         public async Task<JurosVM> GetTaxaJuros ()
         {
             var juros = await _taxaJurosRepository.GetTaxaJuros();
-            return _mapper.Map<JurosVM>(juros);
+            var jurosVM = _mapper.Map<JurosVM>(juros);
+            return jurosVM;
         }
     }
 }

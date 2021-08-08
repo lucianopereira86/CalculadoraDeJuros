@@ -4,9 +4,9 @@ using RetornaTaxaDeJuros.Domain.Domain.Entities;
 
 namespace RetornaTaxaDeJuros.Application.BusinessOperations.Mapper
 {
-    public class DomainToViewModeMapping: Profile
+    public class DomainToViewModeMappingProfile: Profile
     {
-        public DomainToViewModeMapping()
+        public DomainToViewModeMappingProfile()
         {
             CreateMap<Juros, JurosVM>();
         }

@@ -18,7 +18,7 @@ namespace RetornaTaxaDeJuros.Infra.CrossCutting
 
             #region AutoMapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddAutoMapper(typeof(Application.BusinessOperations.Mapper.DomainToViewModeMapping));
+            services.AddAutoMapper(typeof(Application.BusinessOperations.Mapper.DomainToViewModeMappingProfile));
             #endregion AutoMapper
 
             return services;
