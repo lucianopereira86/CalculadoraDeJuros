@@ -31,8 +31,4 @@
     <ProjectReference Include="..\CalculadoraDeJuros.Presentation.API\CalculadoraDeJuros.Presentation.API.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="RepositoryTests\" />
-  </ItemGroup>
-
 </Project>
