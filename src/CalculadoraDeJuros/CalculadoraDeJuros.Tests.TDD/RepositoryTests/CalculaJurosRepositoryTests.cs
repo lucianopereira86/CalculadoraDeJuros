@@ -1,5 +1,5 @@
-﻿using CalculadoraDeJuros.Infra.Repository.Repositories;
-using System;
+﻿using CalculadoraDeJuros.Domain.Domain.Entities;
+using CalculadoraDeJuros.Infra.Repository.Repositories;
 using Xunit;
 
 namespace CalculadoraDeJuros.Tests.RepositoryTests
@@ -7,20 +7,20 @@ namespace CalculadoraDeJuros.Tests.RepositoryTests
     public class CalculaJurosRepositoryTests
     {
         [Theory]
-        [InlineData(100.0, 5, 105.10)]
-        public void ShouldReturnSuccessWhenEqualsExpected(double valorInicial, int meses, double expected)
+        [InlineData(100.0, 5, 0.01, 105.10)]
+        public void ShouldReturnSuccessWhenValorFinalEqualsExpected(double valorInicial, int meses, double juros, double expected)
         {
             #region Arrange
-            double juros = 0.01;
             CalculaJurosRepository repo = new CalculaJurosRepository();
+            var request = new CalculoJurosRequest(valorInicial, juros, meses);
             #endregion Arrange
 
             #region Act
-            double valorFinal = repo.RetornaValorFinal(valorInicial, juros, meses);
+            var result = repo.RetornaValorFinal(request);
             #endregion Act
 
             #region Assert
-            Assert.Equal(valorFinal, expected);
+            Assert.Equal(result.ValorFinal, expected);
             #endregion Assert
         }
     }

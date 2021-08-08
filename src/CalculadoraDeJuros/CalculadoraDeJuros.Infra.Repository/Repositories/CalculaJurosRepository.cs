@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CalculadoraDeJuros.Domain.Domain.Entities;
+using System;
 
 namespace CalculadoraDeJuros.Infra.Repository.Repositories
 {
     public class CalculaJurosRepository
     {
-        public double RetornaValorFinal(double valorInicial, double juros, int meses)
+        public CalculoJurosResult RetornaValorFinal(CalculoJurosRequest request)
         {
-            return Math.Truncate((valorInicial * Math.Pow(1 + juros, meses)) * 100) / 100;
+            double valorFinal = Math.Truncate((request.ValorInicial * Math.Pow(1 + request.Juros, request.Meses)) * 100) / 100;
+            var result = new CalculoJurosResult(valorFinal);
+            return result;
         }
     }
 }
