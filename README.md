@@ -51,3 +51,8 @@ _Resultado visível pelo Visual Studio 2019_
 
 ![test2](/docs/test2.JPG)  
 _Resultado visível pelo Visual Studio 2019_
+
+## Tratamento de erros
+- Os parâmetros de entrada do endpoint /calculajuros da API CalculadoraDeJuros são validados e retornam em formato de exceção:
+![erro](/docs/erro.JPG)  
+
